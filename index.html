@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wild Magic Surge</title>
+    <script src="wildmagic.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 1600px;
+        margin: 30px auto;
+        padding: 20px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .row label {
+        min-width: 80px;
+      }
+
+      .row input,
+      .row select {
+        flex: 1;
+        padding: 6px;
+      }
+
+      textarea {
+        display: block;
+        width: 100%;
+        min-height: 600px;
+        margin-top: 15px;
+        padding: 10px;
+        box-sizing: border-box;
+        resize: vertical;
+        overflow-y: hidden;
+      }
+    </style>
+</head>
+<body>
+    <form id="form">
+        <div class="row" id="rollWrap">
+            <label for="roll" id="label-roll">D100 Roll</label>
+            <input type="number" id="roll" name="roll" value="0" />
+        </div>
+
+        <label>
+            <input type="radio" name="wildMagicType" value="A" checked>
+            A
+        </label>
+
+        <label>
+            <input type="radio" name="wildMagicType" value="B">
+            B
+        </label>
+
+        <div class="row">
+            <button type="submit" id="submit-btn">Confirm</button>
+        </div>
+
+        <textarea id="output" readonly placeholder="Results will appear here..."></textarea>
+    </form>
+</body>
+</html>
